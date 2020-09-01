@@ -1,0 +1,21 @@
+.shipping_policy{
+    width: 98%;
+    margin : 0 auto;
+}
+
+.shipping_policy h2{
+    padding: 15px 0px;
+    border-bottom: 1px solid green;
+    color: green;
+}
+
+.shipping_policy p:first-child{
+    margin-top: 15px;
+}
+
+@media (max-width:480px) {
+    .shipping_policy img{
+        width: 340px;
+    }
+
+}

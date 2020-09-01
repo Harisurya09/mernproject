@@ -1,0 +1,17 @@
+.returnAndExchange {
+    width: 98%;
+    margin: 0 auto;
+}
+
+.returnAndExchange h2 {
+    padding: 15px 0px;
+    border-bottom: 1px solid green;
+    color: green;
+}
+
+@media (max-width:480px) {
+    .returnAndExchange img{
+        width: 340px;
+    }
+
+}

@@ -1,0 +1,11 @@
+.dealership{
+    width: 98%;
+    margin: 0px auto;
+}
+
+.dealership h2{
+    color: green;
+    padding: 15px 0px;
+    border-bottom: 1px solid green;
+    
+}

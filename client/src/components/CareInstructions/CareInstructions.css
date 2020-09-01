@@ -1,0 +1,25 @@
+.careInstructions {
+    width: 98%;
+    margin: 0 auto;
+}
+
+.careInstructions h2{
+    padding: 15px 0px;
+    border-bottom: 1px solid green;
+    color: green;
+}
+
+.careInstructions h3{    
+    width: 15%;
+    border-bottom: 1px solid green;
+    color: green;
+}
+
+@media (max-width:480px) {
+    
+    .careInstructions img{    
+        width: 80px;
+        height: auto;
+    }
+
+}

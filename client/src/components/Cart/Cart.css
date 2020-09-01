@@ -1,0 +1,52 @@
+.cart_container{
+    width: 98%;
+    margin: 0 auto;
+}
+
+.cart_container h2{
+    color: green;
+    padding: 15px 0px;
+    border-bottom: 1px solid green;
+}
+
+.cart_container table {
+    width : 90%;
+    margin: 0 auto;
+}
+
+.cart_container table tr:first-child {
+    border-bottom: 1px solid green
+}
+
+.cart_container table tr:last-child {
+    border-bottom: 1px solid green
+}
+
+.cart_container table > thead > tr > th {
+    padding: 20px 0px;
+}
+
+
+.cart_container table > tbody > tr > td {
+    padding: 30px 0px;
+}
+
+
+.removeBtn {
+    color: red;
+    background-color: white;
+    border: 0px;
+}
+
+
+.items_cost {
+    text-align: right;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 2%;
+}
+/* 
+@media (max-width:480px) {
+    
+
+} */

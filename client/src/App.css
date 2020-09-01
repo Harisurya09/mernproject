@@ -1,0 +1,153 @@
+.App {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.mylink{
+  color: white;
+  text-decoration: none;
+  /* padding: 10px 25px; */
+}
+
+.mylink:hover{
+  color: white;
+  /* border-bottom: 1px solid white; */
+  /* border: 1px solid white; */
+}
+
+.mylink-title{
+  color: green;
+  /* text-decoration: none; */
+}
+
+.mylink-title:hover{
+  color: green;
+  /* text-decoration: none; */
+}
+
+.app_lazy {
+  text-align: center;
+  color: green;
+  font-weight: bold;
+  padding: 20px
+}
+
+.item_detail_screen {
+  width: 98%;
+  margin: auto;
+  display: flex;
+}
+
+.item_detals {
+  width: 55%;
+  margin-top:2%
+}
+
+.item_detals h2{
+  color: green;
+  padding: 15px 0px;
+  border-bottom: 1px solid green;
+}
+
+.item_detals > button {
+  color: white;
+  background-color: green;
+  border: 1px solid green;
+  margin-bottom: 1%;
+  padding: 10px;
+  width: 30%
+}
+
+.item_img{
+  width: 40%;
+  margin-right: 5%;
+  text-align: center;
+  margin-top:2%
+}
+
+.item_img h2{
+ display: none;
+}
+
+.item_img img{
+  width: 500px;
+  height: 500px;
+}
+
+.button {
+  color: white;
+  background-color: green;
+  border: 1px solid green;
+  margin-bottom: 1%;
+  padding: 10px;
+  width: 30%
+}
+
+.items_details_desc{
+  margin-top: 2%;
+}
+
+.app_navbar_Nav {
+  display: none;
+}
+
+@media (max-width:480px) {
+  .App {
+      width: 98%;
+      margin: 0 auto;
+  }
+  .item_detail_screen {
+      width: 98%;
+      margin: auto;
+      display: block;
+  }
+
+  .item_img{
+      width: 100%;
+      text-align: center;
+      margin-top:1%
+  }
+
+  .item_img h2{
+      display: block;
+      color: green;
+      padding: 15px 0px;
+      border-bottom: 1px solid green;
+   }
+
+   .item_detals h2{
+      display: none;
+  }
+
+  .item_img img{
+      width: 360px;
+      height: 360px;
+  }
+
+  .item_detals {
+      width: 100%;
+      margin-top:2%
+  }
+
+  .item_detals > button {
+      color: white;
+      background-color: green;
+      border: 1px solid green;
+      margin-bottom: 1%;
+      padding: 10px;
+      width: 100%;
+  }
+
+  .button {
+      color: white;
+      background-color: green;
+      border: 1px solid green;
+      margin-bottom: 1%;
+      padding: 10px;
+      width: 80%
+  }
+
+  .app_navbar_Nav {
+      display: block;
+  }
+}

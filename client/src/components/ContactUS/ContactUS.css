@@ -1,0 +1,64 @@
+.contactUs {
+    width: 98%;
+    margin:0px auto;
+}
+
+.contactUs h2{
+    color: green;
+    padding: 15px 0px;
+    border-bottom: 1px solid green;
+    
+}
+
+.contact_form {
+    width: 100%;
+    display: flex;
+    margin-top: 2%;
+    margin-bottom: 3%;
+}
+
+.contact{
+    width: 35%;
+    margin-right: 5%;
+}
+.enquiry_form{
+    width: 60%
+}
+
+.enquiry_form h2{
+    color: green;
+    padding: 15px 0px;
+    border-bottom: 1px solid green;
+    margin-bottom: 5%;
+}
+
+.enquiry_form button{
+    background-color:green;
+    color: white;
+    border: 1px solid green;
+}
+
+@media (max-width:480px) {
+    
+    .contact_form {
+        width: 100%;
+        display: block;
+        margin-top: 2%;
+        margin-bottom: 3%;
+    }
+
+    .contact{
+        width: 100%;
+        
+    }
+    .enquiry_form{
+        width: 100%
+    }
+    .enquiry_form button{
+        background-color:green;
+        color: white;
+        border: 1px solid green;
+        width: 100%;
+    }
+
+}

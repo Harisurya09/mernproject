@@ -1,0 +1,11 @@
+.warranty {
+    width: 98%;
+    margin: 0 auto;
+}
+
+.warranty h2{
+    border-bottom: 1px solid green;
+    padding: 15px 0px;
+    color: green;
+    
+}

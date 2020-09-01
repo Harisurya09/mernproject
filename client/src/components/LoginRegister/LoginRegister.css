@@ -1,0 +1,73 @@
+.form_container{
+    width: 98%;
+    margin: 0 auto;
+    
+}
+
+.login_form {
+    width: 50%;
+    margin: 0 auto;
+    
+}
+
+.login_form h2{
+    border-bottom: 1px solid green;
+    color: green;
+    padding: 15px 0px;
+    margin-bottom: 5%;
+}
+
+.login_form p{
+    margin-top:2%
+}
+
+.registration_form {
+     width: 50%;
+    margin-right: 10%;
+    margin: 0 auto;
+}
+
+.registration_form h2{
+    margin-top:4%;
+    border-bottom: 1px solid green;
+    color: green;
+    padding: 15px 0px;
+    margin-bottom: 5%;
+}
+
+.registration_form p{
+    margin-top:2%
+}
+
+.mylink{
+    color: white;
+    text-decoration: none;
+}
+
+@media (max-width:480px) {
+
+    .login_form {
+        width: 100%;
+    }
+
+    .login_form button{
+        width: 100%;
+    }
+
+    .login_form p{
+        margin-top:2%;
+        text-align: center;
+    }
+
+    .registration_form {
+        width: 100%;
+   }
+
+   .registration_form button{
+    width: 100%;
+    }
+    .registration_form p{
+        margin-top:2%;
+        text-align: center;
+    }
+}
