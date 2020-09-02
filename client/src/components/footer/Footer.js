@@ -17,12 +17,12 @@ function Footer() {
                 <ul>
                 <Link to={{ pathname:"/riding-jacket"}} className="mylink"><li>Jackets</li></Link>
                 <Link to={{ pathname:"/riding-gloves"}} className="mylink"><li>Gloves</li></Link>
-                <li>Helmets</li>
+                <Link to={{ pathname:"/riding-helmets"}} className="mylink"><li>Helmets</li></Link>
                 <Link to={{ pathname:"/riding-pants"}} className="mylink"><li>Pants</li></Link>
                 <Link to={{ pathname:"/riding-boots"}} className="mylink"><li>Boots</li></Link>
                 <Link to={{ pathname:"/riding-luggage"}} className="mylink"><li>Luggage</li></Link>
                 <Link to={{ pathname:"/safety-guards"}} className="mylink"><li>Safety Guards</li></Link>
-                <li>Bike Protection</li>
+                <Link to={{ pathname:"/bike-protection"}} className="mylink"><li>Bike Protection</li></Link>
                 <Link to={{ pathname:"/accessories"}} className="mylink"><li>Accessories</li></Link>
                 </ul>
             </div>

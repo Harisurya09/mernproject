@@ -6,6 +6,7 @@ import {Link} from 'react-router-dom';
 import axios from 'axios'
 import {useHistory} from 'react-router-dom'
 import './LoginRegister.css'
+import TextError from '../ErrorBoundry/TextError';
 
 function Register() {
     const history = useHistory();
@@ -25,16 +26,18 @@ function Register() {
     //     console.log('Form Data Two : ', values)
     // }
 
+    const regExpPhno = /^(?:(?:\+|0{0,2})91(\s*[\ -]\s*)?|[0]?)?[789]\d{9}|(\d[ -]?){10}\d$/ ;
+
     const validationSchema = Yup.object({
         firstName: Yup.string().required('Required'),
         lastName: Yup.string().required('Required'),
-        emailID:  Yup.string().required('Required'),
+        emailID:  Yup.string().email('Enter a valid email address').required('Required'),
         username: Yup.string().required('Required'),
-        password: Yup.string().required('Required'),
+        password: Yup.string().required('Required').min(8),
         address: Yup.string().required('Required'),
         state: Yup.string().required('Required'),
-        pincode: Yup.string().required('Required'),
-        phoneNumber: Yup.string().required('Required')
+        pincode: Yup.number().positive('Pincode number cannot start with minus').integer('Cant have decimals').min(6).required('Required'),
+        phoneNumber: Yup.number().min(10).required('Required')
     })
 
     // useEffect(()=>{
@@ -51,50 +54,51 @@ function Register() {
             <div className="registration_form">
                 <h2>Sign Up</h2>
                 <Formik initialValues={registerValues} onSubmit={onSubmit} validationSchema={validationSchema}>
-                    <Form>
+                    <Form autoComplete='off'>
                     <div className='form-group'>
                         <label htmlFor="firstName">First Name</label>
                         <Field type='text' name='firstName' id="firstName" className="form-control" />
-                        <ErrorMessage name="firstName" />
+                        <ErrorMessage name="firstName" component={TextError}/>
                         </div>
                         <div className='form-group'>
                         <label htmlFor="lastName">Last Name</label>
                         <Field type='text' name='lastName' id="lastName" className="form-control"/>
-                        <ErrorMessage name="lastName" />
+                        <ErrorMessage name="lastName" component={TextError}/>
                         </div>
                         <div className='form-group'>
                         <label htmlFor="emailID">Email ID</label>
-                        <Field type='text' name='emailID' id="emailID" className="form-control"/>
-                        <ErrorMessage name="emailID" />
+                        <Field type='email' name='emailID' id="emailID" className="form-control"/>
+                        <ErrorMessage name="emailID" component={TextError}/>
                         </div>
                         <div className='form-group'>
                         <label htmlFor="username">User Name</label>
                         <Field type='text' name='username' id="username" className="form-control"/>
-                        <ErrorMessage name="username" />
+                        <ErrorMessage name="username" component={TextError}/>
                         </div>
                         <div className='form-group'>
                         <label htmlFor="password">Password</label>
-                        <Field type='text' name='password' id="password" className="form-control"/>
-                        <ErrorMessage name="password" />
+                        <Field type='password' name='password' id="password" className="form-control"/>
+                        <ErrorMessage name="password" component={TextError}/>
                         </div>
                         <div className='form-group'>
                         <label htmlFor="address">Address</label>
                         <Field as="textarea" name='address' id="address" className="form-control"/>
-                        <ErrorMessage name="address" />
+                        <ErrorMessage name="address" component={TextError}/>
                         </div>
                         <div className='form-group'>
                         <label htmlFor="state">State</label>
                         <Field type='text' name='state' id="state" className="form-control"/>
-                        <ErrorMessage name="state" />
+                        <ErrorMessage name="state" component={TextError}/>
                         </div>
                         <div className='form-group'>
                         <label htmlFor="pincode">Pincode</label>
-                        <Field type='text' name='pincode' id="pincode" className="form-control"/>
-                        <ErrorMessage name="pincode" />
+                        <Field type='number' name='pincode' id="pincode" className="form-control"/>
+                        <ErrorMessage name="pincode" component={TextError}/>
                         </div>
                         <div className='form-group'>
                         <label htmlFor="phoneNumber">Phone Number</label>
-                        <Field type='text' name='phoneNumber' id="phoneNumber" className="form-control"/>
+                        <Field type='tel' name='phoneNumber' id="phoneNumber" className="form-control"/>
+                        <ErrorMessage name="phoneNumber" component={TextError}/>
                         </div>
                         <button type='submit' style={{backgroundColor:'green', color: 'white', border: '1px solid green'}} >Register</button>
                     </Form>

@@ -9,6 +9,7 @@ import {auth_user} from '../../redux/Access/actions/accessActions';
 import { useHistory } from "react-router-dom";
 
 import './LoginRegister.css'
+import TextError from '../ErrorBoundry/TextError';
 
 function LoginRegister() {
     const history = useHistory();
@@ -27,7 +28,7 @@ function LoginRegister() {
     }
 
     const validationSchema = Yup.object({
-        emailID: Yup.string().required('Required'),
+        emailID: Yup.string().email('Invalid Email').required('Required'),
         password: Yup.string().required('Required')
     })
 
@@ -42,13 +43,13 @@ function LoginRegister() {
                     <Form>
                     <div className='form-group'>
                         <label htmlFor="emailID">Email Id</label>
-                        <Field type='text' name='emailID' id="emailID" className="form-control" />
-                        <ErrorMessage name="emailID" />
+                        <Field type='email' name='emailID' id="emailID" className="form-control" />
+                        <ErrorMessage name="emailID" component={TextError}/>
                     </div>
                     <div className='form-group'>
                         <label htmlFor="password">Password</label>
-                        <Field type='text' name='password' id="password" className="form-control"/>
-                        <ErrorMessage name="password"  />
+                        <Field type='password' name='password' id="password" className="form-control"/>
+                        <ErrorMessage name="password"  component={TextError}/>
                     </div>
                         <button type='submit' style={{backgroundColor:'green', color: 'white', border: '1px solid green'}}>Sign In</button>
                     </Form>

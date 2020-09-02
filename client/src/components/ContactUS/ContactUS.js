@@ -4,6 +4,7 @@ import {Formik, Form, Field, ErrorMessage} from 'formik';
 import * as Yup from 'yup';
 
 import './ContactUS.css'
+import TextError from '../ErrorBoundry/TextError';
 
 
 function ContactUS() {
@@ -20,7 +21,7 @@ function ContactUS() {
 
     const validationSchema = Yup.object({
             name: Yup.string().required('Required'),
-            email: Yup.string().required('Required'),
+            email: Yup.string().email('Please enter valid email address').required('Required'),
             phoneNumber: Yup.string().required('Required'),
             message: Yup.string().required('Required')
     })
@@ -42,22 +43,22 @@ function ContactUS() {
                             <div className="form-group">
                                 <label htmlFor="name">Name</label>
                                 <Field name="name" type="text" className='form-control' id="name"/>
-                                <ErrorMessage name="name" />
+                                <ErrorMessage name="name" component={TextError}/>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="email">Email</label>
                                 <Field name="email" type="text" className='form-control' id="email"/>
-                                <ErrorMessage name="email" />
+                                <ErrorMessage name="email" component={TextError}/>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="phoneNumber">Phone Number</label>
-                                <Field name="phoneNumber" type="text" className='form-control' id="phoneNumber"/>
-                                <ErrorMessage name="phoneNumber" />
+                                <Field name="phoneNumber" type="tel" className='form-control' id="phoneNumber"/>
+                                <ErrorMessage name="phoneNumber" component={TextError}/>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="message">Message</label>
                                 <Field name="message" as="textarea" className='form-control' id="message"/>
-                                <ErrorMessage name="message" />
+                                <ErrorMessage name="message" component={TextError} />
                             </div>
                             <button type="submit">Send</button>
                         </Form>

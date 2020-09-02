@@ -31,13 +31,13 @@ function Navigationbar() {
                         </ReactBS.NavDropdown>
                         <ReactBS.NavDropdown title="Products" id="basic-nav-dropdown" variant='light' >
                                 <ReactBS.NavDropdown.Item><Link to="/riding-gloves" className='mylink'>Gloves</Link></ReactBS.NavDropdown.Item>
-                                <ReactBS.NavDropdown.Item>Helmet</ReactBS.NavDropdown.Item>
+                                <ReactBS.NavDropdown.Item><Link to="/riding-helmets" className='mylink'>Helmet</Link></ReactBS.NavDropdown.Item>
                                 <ReactBS.NavDropdown.Item><Link to="/riding-jacket" className='mylink'>Jackets</Link></ReactBS.NavDropdown.Item>
                                 <ReactBS.NavDropdown.Item><Link to="/riding-pants" className='mylink'>Pants</Link></ReactBS.NavDropdown.Item>
                                 <ReactBS.NavDropdown.Item><Link to="/safety-guards" className='mylink'>Safety Guards</Link></ReactBS.NavDropdown.Item>
                                 <ReactBS.NavDropdown.Item><Link to="/riding-boots" className='mylink'>Boots</Link></ReactBS.NavDropdown.Item>
                                 <ReactBS.NavDropdown.Item><Link to="/riding-luggage" className='mylink'>Luggage</Link></ReactBS.NavDropdown.Item>
-                                <ReactBS.NavDropdown.Item>Bike Protection</ReactBS.NavDropdown.Item>
+                                <ReactBS.NavDropdown.Item><Link to="/bike-protection" className='mylink'>Bike Protection</Link></ReactBS.NavDropdown.Item>
                                 <ReactBS.NavDropdown.Item><Link to="/accessories" className='mylink'>Accessories</Link></ReactBS.NavDropdown.Item>
                             </ReactBS.NavDropdown>
                         </ReactBS.Nav>
