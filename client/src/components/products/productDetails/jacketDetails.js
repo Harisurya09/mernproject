@@ -1,11 +1,11 @@
 import React, { useEffect, lazy, Suspense } from 'react'
+import {item_fetch} from '../../../redux/Items/actions/itemActions';
+import {useSelector, useDispatch} from 'react-redux';
+import {cartItems_fetch} from '../../../redux/Cart/actions/cartActions';
 
-import {useSelector} from 'react-redux';
-import {cartItems_type_fetch, cartItems_fetch} from '../../../redux/Cart/actions/cartActions';
-import {useDispatch} from 'react-redux';
 const SubImage = lazy(() =>import('./SubImage'));
 
-function JacketDetails() {
+function JacketDetails(props) {
 	const item = useSelector(state => state.item.item)
 
 	const dispatch = useDispatch()
@@ -16,8 +16,10 @@ function JacketDetails() {
 	}
 
 	useEffect(()=>{
-		dispatch(cartItems_type_fetch())
-	})
+		// dispatch(items_type_fetch())
+		dispatch(item_fetch(props.match.params.id))
+	},[props.match.params.id])
+	
 
     return (
         <div className="item_detail_screen">

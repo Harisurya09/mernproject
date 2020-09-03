@@ -24,6 +24,7 @@ const items_type_error = (error) => {
 
 export const item_fetch = (id) => {
     return (dispatch) => {
+        dispatch(items_type_fetch())
         axios.get(`/products/${id}`)
         .then(res=> {
             const item = res.data;

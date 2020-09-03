@@ -1,13 +1,16 @@
-import React from 'react'
-
+import React , {useEffect} from 'react'
+import accessories_fetch from '../../redux/Accessories/actions/accessoriesActions';
+import {useSelector, useDispatch } from 'react-redux';
 import Product from '../products/Product_HOC/Product';
-
-
-import { useSelector } from 'react-redux';
 
 function RidingAccessories() {
 
     const accessories = useSelector(state => state.extra.accessories)
+    const dispatch = useDispatch()
+
+    useEffect(()=>{
+        dispatch(accessories_fetch())
+    }, [])
 
     return (
         <div>

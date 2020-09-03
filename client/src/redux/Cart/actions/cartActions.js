@@ -1,7 +1,7 @@
 import {CartItems_Type_Fetch, CartItems_Type_Success, CartItems_Type_Failure, CartItems_Type_Less, CartItems_Type_Reset} from './cartTypes';
 import axios from 'axios';
 
-export const cartItems_type_fetch = () => {
+const cartItems_type_fetch = () => {
     return {
         type: CartItems_Type_Fetch
     }
@@ -38,6 +38,7 @@ export const cartItems_type_reset = () => {
 
 export const cartItems_fetch = (id) => {
     return (dispatch) => {
+        dispatch(cartItems_type_fetch())
         axios.get(`/products/${id}`)
             .then(res => {
                 const cartItems = res.data;

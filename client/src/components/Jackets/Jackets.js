@@ -1,14 +1,18 @@
-import React from 'react';
-
+import React , {useEffect} from 'react';
+import jackets_fetch from '../../redux/Jackets/actions/jacketActions';
+import {useSelector, useDispatch } from 'react-redux';
 import Product from '../products/Product_HOC/Product';
 
-
-import { useSelector } from 'react-redux';
 
 function Jackets() {
     
     const jackets = useSelector(state => state.jacket.jackets)
-    // console.log(jackets)
+    const dispatch = useDispatch()
+
+    useEffect(()=>{
+        dispatch(jackets_fetch())
+    }, [])
+
     return (
         <div>
             <Product title='Riding Jacket' products={jackets} />

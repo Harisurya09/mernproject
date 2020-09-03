@@ -1,13 +1,17 @@
-import React from 'react'
-
+import React, {useEffect} from 'react'
+import lugguage_fetch from '../../redux/Luggage/actions/luggageActions';
+import {useSelector, useDispatch } from 'react-redux';
 import Product from '../products/Product_HOC/Product';
 
-
-import { useSelector } from 'react-redux';
 
 function RidingLuggage() {
 
     const luggage = useSelector(state => state.bag.luggage)
+    const dispatch = useDispatch()
+
+    useEffect(()=>{
+        dispatch(lugguage_fetch())
+    }, [])
 
     return (
         <div>

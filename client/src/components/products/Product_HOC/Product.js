@@ -1,30 +1,18 @@
-import React, { useEffect, lazy, Suspense } from 'react';
-// import { useSelector } from 'react-redux';
-
-//error boundry
+import React, { lazy, Suspense } from 'react';
 import ErrorBoundry from '../../ErrorBoundry/ErrorBoundry';
-import {item_fetch, items_type_fetch} from '../../../redux/Items/actions/itemActions';
+
 import {useHistory} from 'react-router-dom';
 import './Product.css';
-import { useDispatch } from 'react-redux';
 const Image = lazy(()=>import('../Image'));
 // import Image from '../Image'
 
 function Product(props) {
     const {title, products} = props;
     const history = useHistory();
-    const dispatch = useDispatch();
 
     const itemDetails = (id, category)=>{
-        // console.log(id)
-        dispatch(item_fetch(id))
         history.push(`/products/${category}/${id}`)
-
     }
-
-    useEffect(()=>{
-        dispatch(items_type_fetch())
-    },[])
 
     return (
         <div className="product_container">

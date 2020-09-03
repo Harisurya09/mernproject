@@ -46,7 +46,7 @@ const UpdateUser = lazy(()=> import('./components/Account/updateUser'))
 const UnderConstruction = lazy(()=> import('./components/products/UnderConstruction'))
 
 
-//axios.defaults.baseURL = 'http://localhost:3999';
+axios.defaults.baseURL = 'http://localhost:3999';
 axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem('token')}` ;
 // axios.defaults.headers.post['Content-type'] = 'application/JSON';
 

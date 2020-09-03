@@ -5,29 +5,15 @@ import SliderImage from '../slider/SliderImage'
 
 import './ProductsMenu.css';
 import { Link } from 'react-router-dom';
-import jackets_fetch from '../../redux/Jackets/actions/jacketActions';
-import gloves_fetch from '../../redux/Gloves/actions/glovesAction';
-import pants_fetch from '../../redux/Pants/actions/pantAction';
-import guards_fetch from '../../redux/SafetyGuard/actions/guardActions';
-import boots_fetch from '../../redux/Boots/actions/bootActions';
-import lugguage_fetch from '../../redux/Luggage/actions/luggageActions';
-import accessories_fetch from '../../redux/Accessories/actions/accessoriesActions';
+
 import { loggedIn_user } from '../../redux/Access/actions/accessActions';
 import { useDispatch } from 'react-redux';
 
 function ProductsMenu() {
-    // const history = useHistory();
-    // const items =['riding-gloves','riding-jacket', 'riding-pant','safety-guards', 'boots', 'riding-luggage', 'accessories']
+
     const dispatch = useDispatch()
 
     useEffect(()=>{
-        dispatch(jackets_fetch())
-        dispatch(gloves_fetch())
-        dispatch(pants_fetch())
-        dispatch(guards_fetch())
-        dispatch(boots_fetch())
-        dispatch(lugguage_fetch())
-        dispatch(accessories_fetch())
         dispatch(loggedIn_user())
     }, [])
 

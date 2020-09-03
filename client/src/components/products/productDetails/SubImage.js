@@ -5,7 +5,9 @@ function SubImage(props) {
 
     return (
         <React.Fragment>
-          <img src={require(`../../../images/${props.image}`)} alt={props.name}/>
+          {
+            props.image != undefined ? <img src={require(`../../../images/${props.image}`)} alt={props.name}/> : <img src={require('../../../images/loading.gif')} alt='Loading'/>
+          }
         </React.Fragment>
     )
 }

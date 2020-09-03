@@ -1,14 +1,11 @@
 import React, { useEffect, lazy, Suspense } from 'react'
-
-import {useSelector} from 'react-redux';
-import {cartItems_type_fetch, cartItems_fetch} from '../../../redux/Cart/actions/cartActions';
-import {useDispatch} from 'react-redux';
+import {item_fetch} from '../../../redux/Items/actions/itemActions';
+import {useSelector,useDispatch} from 'react-redux';
+import {cartItems_fetch} from '../../../redux/Cart/actions/cartActions';
 const SubImage = lazy(() =>import('./SubImage'));
-// import Image from '../Image';
 
-function GlovesDetails() {
+function GlovesDetails(props) {
 	const item = useSelector(state => state.item.item)
-
 	const dispatch = useDispatch()
 
 	const addToCart = (id) => {
@@ -17,15 +14,16 @@ function GlovesDetails() {
 	}
 
 	useEffect(()=>{
-		dispatch(cartItems_type_fetch())
-	})
+		// dispatch(items_type_fetch())
+		dispatch(item_fetch(props.match.params.id))
+	},[props.match.params.id])
 
     return (
         <div className="item_detail_screen">
 				<div className="item_img">
 					<h2>{item.productName}</h2>
 					<Suspense fallback='Image Loading....'>
-					<SubImage image={item.productImage} name={item.productName} />
+						<SubImage image={item.productImage} name={item.productName} />
 					</Suspense>
 				</div>
 				<div className="item_detals">
