@@ -5,7 +5,9 @@ function Image(props) {
 
     return (
         <React.Fragment>
-          <img alt={props.name} src={require(`../../images/${props.image}`)} />
+          {
+            props.image != undefined ? <img src={require(`../../../images/${props.image}`)} alt={props.name}/> : <img src={require('../../../images/loading.gif')} alt='Loading'/>
+          }
         </React.Fragment>
     )
 }
