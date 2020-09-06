@@ -8,7 +8,8 @@ import luggageReducer from './Luggage/luggageReducer';
 import accessoriesReducer from './Accessories/accessoriesReducer';
 import accessReducer from './Access/accessReducer';
 import itemReducer from './Items/itemsReducer';
-import CartItemsReducer from './Cart/cartReducer'
+import CartItemsReducer from './Cart/cartReducer';
+import helmetsReducer from './Helmet/HelmetReducer';
 
 const rootReducer = combineReducers({
     jacket :jacketReducer,
@@ -20,7 +21,8 @@ const rootReducer = combineReducers({
     extra: accessoriesReducer,
     access: accessReducer,
     item : itemReducer,
-    cartItems: CartItemsReducer
+    cartItems: CartItemsReducer,
+    helmet: helmetsReducer
 })
 
 

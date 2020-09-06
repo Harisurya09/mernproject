@@ -30,7 +30,7 @@ function LuggageDetails(props) {
 				<div className="item_detals">
 								<h2>{item.productName}</h2>
 								<p>Brand: <strong>{item.brand}</strong></p>
-									<p>Price: <strong>{item.price}</strong></p>
+									<p>Price: <strong>{item.price} INR</strong></p>
 									<p>Delivery time: one week</p>
 									<button type="button" onClick={() => addToCart(item._id)}>Add to Cart</button>
 									<div className="items_details_desc">

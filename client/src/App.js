@@ -44,6 +44,8 @@ const Cart = lazy(()=> import('./components/Cart/Cart'));
 const Thankyou = lazy(()=> import('./components/thankyou'));
 const UpdateUser = lazy(()=> import('./components/Account/updateUser'))
 const UnderConstruction = lazy(()=> import('./components/products/UnderConstruction'))
+const Helmet = lazy(()=> import('./components/Helmets/Helmet'));
+const HelmetDetails = lazy(()=> import('./components/products/productDetails/helmetDetails'))
 
 
 // axios.defaults.baseURL = 'http://localhost:3999';
@@ -99,9 +101,10 @@ function App() {
                 <Route path="/products/luggage/:id" component={LuggageDetails}  />
                 <Route path="/products/accessories/:id" component={AccessoriesDetails}  />
                 <Route path="/products/guards/:id" component={GuardDetails}  />
+                <Route path="/products/helmet/:id" component={HelmetDetails}  />
                 <Route path='/cart' exact component={Cart} />
                 <Route path='/cart/order' component={Thankyou} />
-                <Route path='/riding-helmets' component={UnderConstruction} />
+                <Route path='/riding-helmets' component={Helmet} />
                 <Route path='/bike-protection' component={UnderConstruction} />
                 <ProtectedRoute exact path="/my-account" Component={Account} />
                 <ProtectedRoute path='/userprofile/update' component={UpdateUser} />

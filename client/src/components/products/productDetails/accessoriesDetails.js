@@ -2,7 +2,7 @@ import React, { useEffect , lazy, Suspense} from 'react'
 import {item_fetch} from '../../../redux/Items/actions/itemActions';
 import {useSelector, useDispatch} from 'react-redux';
 import {cartItems_fetch} from '../../../redux/Cart/actions/cartActions';
-const SubImage = lazy(() =>import('./SubImage'));
+const Image = lazy(() => import('../Image'))
 
 function AccessoriesDetails(props) {
 	const item = useSelector(state => state.item.item)
@@ -25,13 +25,13 @@ function AccessoriesDetails(props) {
 				<div className="item_img">
 				<h2>{item.productName}</h2>
 				<Suspense fallback='Image Loading....'>
-					<SubImage image={item.productImage} name={item.productName} />
+					<Image image={item.productImage} name={item.productName} />
 				</Suspense>
 				</div>
 				<div className="item_detals">
 								<h2>{item.productName}</h2>
 								<p>Brand: <strong>{item.brand}</strong></p>
-									<p>Price: <strong>{item.price}</strong></p>
+									<p>Price: <strong>{item.price} INR</strong></p>
 									<p>Delivery time: one week</p>
 									<button type="button" onClick={() => addToCart(item._id)}>Add to Cart</button>
 									<div className="items_details_desc">
