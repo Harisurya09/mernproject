@@ -26,6 +26,16 @@ productRouter.get('/prod/riding-helmet', async (req,res)=>{
     }
 })
 
+productRouter.get('/prod/bike-protection', async (req,res)=>{
+    
+    try {
+        const data = await product.find({category: 'bike-protection'});
+        res.status(200).send(data);
+    } catch (err) {
+        res.status(400).send(err)
+    }
+})
+
 productRouter.get('/prod/riding-pant', async (req,res)=>{
     
     try {

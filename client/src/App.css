@@ -155,3 +155,10 @@
       display: block;
   }
 }
+/* 
+@media (min-width:320px){
+  .app_navbar_Nav {
+    display: block;
+    width: 320px;
+}
+} */

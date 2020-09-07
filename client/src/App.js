@@ -46,27 +46,12 @@ const UpdateUser = lazy(()=> import('./components/Account/updateUser'))
 const UnderConstruction = lazy(()=> import('./components/products/UnderConstruction'))
 const Helmet = lazy(()=> import('./components/Helmets/Helmet'));
 const HelmetDetails = lazy(()=> import('./components/products/productDetails/helmetDetails'))
+const BikeProtection = lazy(()=> import('./components/BikeProtection/BikeProtection'))
+const ProtectionDetails = lazy(() => import('./components/products/productDetails/protectionDetails'));
 
 
 // axios.defaults.baseURL = 'http://localhost:3999';
 axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem('token')}` ;
-// axios.defaults.headers.post['Content-type'] = 'application/JSON';
-
-// axios.interceptors.request.use( req => {
-//   req.header.Authorization = `Bearer ${localStorage.getItem('token')}` ;
-//   return req
-// }, error => {
-//   return error
-// })
-
-
-// axios.interceptors.response.use( response => {
-//   return response
-// }, error => {
-//   return error
-// })
-
-
 
 function App() {
 
@@ -102,10 +87,11 @@ function App() {
                 <Route path="/products/accessories/:id" component={AccessoriesDetails}  />
                 <Route path="/products/guards/:id" component={GuardDetails}  />
                 <Route path="/products/helmet/:id" component={HelmetDetails}  />
+                <Route path="/products/bike-protection/:id" component={ProtectionDetails}  />
                 <Route path='/cart' exact component={Cart} />
                 <Route path='/cart/order' component={Thankyou} />
                 <Route path='/riding-helmets' component={Helmet} />
-                <Route path='/bike-protection' component={UnderConstruction} />
+                <Route path='/bike-protection' component={BikeProtection} />
                 <ProtectedRoute exact path="/my-account" Component={Account} />
                 <ProtectedRoute path='/userprofile/update' component={UpdateUser} />
                 <Route path="**" component={NotFound}  />                

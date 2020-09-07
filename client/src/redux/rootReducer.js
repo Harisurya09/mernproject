@@ -10,6 +10,7 @@ import accessReducer from './Access/accessReducer';
 import itemReducer from './Items/itemsReducer';
 import CartItemsReducer from './Cart/cartReducer';
 import helmetsReducer from './Helmet/HelmetReducer';
+import protectionReducer from './BikeProtection/protectionReducer'
 
 const rootReducer = combineReducers({
     jacket :jacketReducer,
@@ -22,7 +23,8 @@ const rootReducer = combineReducers({
     access: accessReducer,
     item : itemReducer,
     cartItems: CartItemsReducer,
-    helmet: helmetsReducer
+    helmet: helmetsReducer,
+    bike: protectionReducer
 })
 
 

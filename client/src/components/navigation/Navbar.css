@@ -78,3 +78,11 @@
 
 }
 
+@media (max-width:480px) {
+    .app_navbar ul {
+        display: none;
+        
+    }
+
+}
+
