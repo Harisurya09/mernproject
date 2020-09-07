@@ -83,7 +83,7 @@
 } */
 
 
-@media (min-width:480px) {
+@media (max-width:480px) {
 
     .productGrid{
         display: grid;
@@ -94,7 +94,7 @@
     }
 
     .productGridItem{
-        width: 360px;
+        width: 380px;
         height: 350px;
         text-align: center;
         border: 1px solid green;
