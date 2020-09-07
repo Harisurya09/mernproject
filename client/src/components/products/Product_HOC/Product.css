@@ -57,7 +57,7 @@
 }
 
 
-@media (min-width:320px) {
+/* @media (min-width:320px) {
 
     .productGrid{
         display: grid;
@@ -80,7 +80,7 @@
         height: 200px !important;
     }
 
-}
+} */
 
 
 @media (min-width:480px) {
